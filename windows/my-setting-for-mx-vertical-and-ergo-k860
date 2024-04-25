@@ -3,3 +3,9 @@ rem Switch ERGO K860 to channel 3 by unify
 
 rem Switch MX Vertical to channel 3 by unify
 .\hidapitester.exe --vidpid 046D:C52B --usage 0x0001 --usagePage 0xFF00 --open --length 7 --send-output 0x10,0x01,0x0C,0x1C,0x02,0x00,0x00
+
+rem Switch ERGO K860 to channel 1 by bluetooth
+.\hidapitester.exe -v --vidpid 046D:B359 --usagePage 0xff43 --usage 0x0202 --open --length 7 --send-output 0x11,0x00,0x08,0x11,0x00,0x00,0x00
+
+rem Switch MX vertical to channel 1 by bluetooth
+.\hidapitester.exe -v --vidpid 046D:B020 --usagePage 0xFF43 --usage 0x0202 --open --length 7 --send-output 0x11,0x00,0x0C,0x1C,0x00,0x00,0x00
